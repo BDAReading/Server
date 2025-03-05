@@ -2,6 +2,7 @@
 
 ### 현재 폴더 구조
 
+```yaml
 BookReviewApp
 │   requirements.txt # Python 의존성 목록 파일
 │
@@ -11,6 +12,7 @@ BookReviewApp
 │   │   main.py # 서버 실행 파일
 │   │   models.py # ORM 모델 관리 파일
 │   │   schemas.py # pydantic 모델 관리 파일
+```
 
 <br>
 * git clone 하시면 secrets.json 파일을 만들어서 DB 경로를 지정하면 됩니다.
