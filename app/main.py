@@ -44,7 +44,7 @@ async def sign_up(user: schemas.UserCreate, db: db_dependency):
 
 
 # 게시글 작성
-@app.post("/post-create/", status_code=status.HTTP_201_CREATED)
+@app.post("/post-create", status_code=status.HTTP_201_CREATED)
 async def create_post(post: schemas.PostCreate, db: db_dependency):
     db_post = models.Post(**post.model_dump())
     db.add(db_post)
@@ -70,7 +70,7 @@ async def read_post(post_id: int, db: db_dependency):
     post = (
         db.query(models.Post)
         .options(joinedload(models.Post.user))
-        .filter(models.Post.id == post_id)
+        .filter(models.Post.post_id == post_id)
         .first()
     )
     if post is None:
